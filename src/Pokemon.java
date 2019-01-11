@@ -28,8 +28,7 @@ public class Pokemon {
 			Scanner s = new Scanner(line).useDelimiter(",");
 			
 			String[] dataText = new String[13];
-			
-			String output = "";
+			String output = "#,Name,Type 1,Type 2,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed,Generation,Legendary\n";
 			
 			while ((line = input.readLine()) != null) {
 				s = new Scanner(line).useDelimiter(",");
@@ -39,7 +38,7 @@ public class Pokemon {
 				if (type.equals(dataText[2]) || type.equals(dataText[3])) {
 					
 					for (int i = 0; i < dataText.length; i++) {
-						output += dataText[i] +", ";
+						output += dataText[i] +",";
 					}
 					output += "\n";
 					
@@ -50,6 +49,7 @@ public class Pokemon {
 			fileWriter.write(output);
 			fileWriter.flush();
 			fileWriter.close();
+			input.close();
 			
 		  } catch (FileNotFoundException ex) {
 			System.err.println("The file Pokemon.csv has not been found");
