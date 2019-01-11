@@ -11,14 +11,11 @@ import java.util.Scanner;
 public class Pokemon {
 
 	public static void main(String[] args) throws IOException {
-		
 		getPokemon("Grass");
-
 	}
 	
 	public static void getPokemon(String type) throws IOException{
 		try {
-			
 			BufferedReader input = null;
 			File file = new File("pokemonOutput.csv");
 			FileWriter fileWriter = new FileWriter(file);
@@ -36,7 +33,6 @@ public class Pokemon {
 					dataText[i] = s.next();
 				}
 				if (type.equals(dataText[2]) || type.equals(dataText[3])) {
-					
 					for (int i = 0; i < dataText.length; i++) {
 						output += dataText[i] +",";
 					}
